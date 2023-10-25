@@ -1,0 +1,277 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    
+  }
+  body {
+      width: 100%;
+      overflow: hidden;
+      background-color: rgb(173, 130, 214);
+  }
+  @media (min-width:10px) and (max-width:3000px){
+    body {
+        width: 100%;
+        overflow: hidden;
+        background-color: rgb(173, 130, 214);
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+      
+    header {
+        width: 100%;
+        height: 2000px;
+        background-color: rgb(178, 155, 199);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .dex2 {
+        width: 100%;
+        background-color: rgb(178, 155, 199);
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 10px;
+
+    }
+    .mp {
+        /* height: 480px; */
+        width: 340px;
+        background-color: white;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+    }
+    .hea2 {
+        height: 12%;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        flex-direction: column;
+    }
+    .formulaire {
+        height: 73%;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        align-items: end;
+        justify-content: start;
+        flex-direction: column;
+    }
+    .formulaire label{
+        font-size: 0.5rem;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 5px;
+       
+        color: rgba(192, 125, 192, 0.747);
+
+    }
+    .formulaire input{
+        height: 25px;
+        width: 100%;
+        background-color: rgba(146, 151, 151, 0.452);
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        padding-left: 10px;
+    }
+    .formulaire button{
+        height: 40px;
+        width: 40%;
+        background-color: blueviolet;
+        border-radius: 8px;
+        color: white;
+        border: none;
+        margin: 0 auto;
+        outline: none;
+
+    }
+       
+    
+}
+  
+  @media (min-width:3000px) {
+      
+      
+      
+    a {
+        text-decoration: none;
+        color: white;
+    }
+      
+    header {
+        width: 100%;
+        height: 4000px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .dex2 {
+        width: 100%;
+        background-color: white;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 10px;
+
+    }
+    .mp {
+        height: 800px;
+        width: 550px;
+        background-color: black;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 20px;
+    }
+    .hea {
+        height: 15%;
+        width: 40%;
+        background: url(../image/BLA.jpg) 50% no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: 200px;
+        filter: invert();
+    }
+    .hea2 {
+        height: 100px;
+        width: 100%;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .hea2 p{
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .hea3 {
+        margin-top: 20px;
+        height: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        background-color: rgb(0, 0, 0);
+    }
+
+    .hea3 p {
+        margin-bottom: 15px;
+        font-size: 0.8rem;
+        color: white;
+        font-weight: bold;
+        padding-right: 35px;
+    }
+    .hea4 {
+        height: 30px;
+        width: 100%;
+        background-color: black;
+        display: flex;
+        justify-content: end;
+        padding-right: 20px;
+        
+    }
+    .hea4 input {
+        border-radius: 40px;
+        border: 1px solid white;
+        background-color: rgba(49, 48, 48, 0.199);
+        width: 90%;
+        height: 40px;
+        color: white;
+        padding-left: 10px;
+    }
+    .hea5 {
+        margin-top: 20px;
+        height: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        background-color: black;
+        color: white;
+    }
+    .hea5 p {
+        font-size: 1rem;
+        padding-right: 40px;
+        margin-top: 20px;
+    }
+    .hea5 p:hover{
+        font-size: 0.7rem;
+        padding-right: 20px;
+        color: blue;
+        
+    }
+    .hea6{
+        margin-top: 20px;
+        height: 200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        background-color: black;
+        color: white;
+    }
+    .hea6 h1 {
+        font-size: 1.5rem;
+        padding-bottom: 30px;
+    }
+
+    .hea7{
+        height: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: white;
+    }
+    .hea7 li {
+        font-size: 1.2rem;
+        list-style-type: none;
+        
+    }
+    .hea7 li a{
+        padding: 20px;
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 60px;
+        
+    }
+    .hea7 li a:hover{
+        padding: 10px;
+        background-color: rgba(102, 100, 100, 0.075);
+        border: 2px solid rgb(0, 0, 0);
+        border-radius: 20px;
+        color: white;
+        font-weight: bolder;
+        font-size: 1rem;
+        
+    }
+      
+  }
+  

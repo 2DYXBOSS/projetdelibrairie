@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    
+  }
+
+  a {
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+    
+  }
+body {
+    padding: 50px;
+    width: 100%;
+    
+    background-color: white;
+    display: grid;
+    place-items: center;
+    
+}
+.ajoutons {
+    width: 80%;
+    
+    
+    padding-top: 10px;
+    margin-bottom: 50px;
+
+}
+
+.eduz {
+    display: flex;
+    
+    width: 100%;
+    height: 50%;
+}
+.eduz a{
+    width: 100px;
+    height: 40px;
+    font-size: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(114, 17, 109);
+    border-radius: 2px;
+    margin-right: 50px;
+}
+.sys a{
+    width: 100px;
+    height: 40px;
+    font-size: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(114, 17, 109);
+    border-radius: 2px;
+    margin-right: 50px;
+}
+.sys {
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+table {
+    width: 80%;
+    border: none;
+    overflow: hidden;
+    background-color: rgb(230, 230, 230);
+
+}
+thead {
+    width: 100%;
+    background-color: white;
+
+}
+tbody {
+    width: 100%;
+    border: 10px solid black;
+    background-color: white;
+    
+}
+tbody .suppr{
+    width: 100%;
+    padding: 12px 35px;
+    font-size: 0.5rem;
+    background-color: #a31818;
+    border-radius: 2px;
+
+}
+tbody .modif{
+    width: 100%;
+    padding: 12px 35px;
+    font-size: 0.5rem;
+    background-color: rgb(24, 163, 66);
+    border-radius: 2px;
+
+}
+td {
+    padding: 10px 12px;
+    text-align: center;
+}

@@ -1,0 +1,59 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="dex2">
+            <div class="mp">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <ul style="text-align: center;">
+                        {% for message in messages %}
+                        <li style="color: red;list-style-type: none;font-size: 0.8rem;">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}
+                <div class="hea2">
+                    <strong><p style="color: rgba(162, 117, 204, 0.555);"><span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 3rem;color: blueviolet;">B</span>lay Library</p></strong>
+                </div>
+                <div class="hea2">
+                    <h2 style="color: blueviolet;font-size: 1rem;margin-bottom: 10px;">MODIFICATION DES INFORMATIONS</h2>
+                </div>
+                <form action="{{url_for('update', id = user.id)}}" method="post" class="formulaire">
+                    <label >Modifier le Nom et le Prenom</label>
+                    <input required type="text" name="first_name" value="{{ user.first_name }}" id="">
+                    <label >Modifier le Email</label>
+                    <input required type="mail" name="last_name" value="{{ user.last_name }}" id="">
+                    <label >Modifier le Mot de passe</label>
+                    <input  required type="text" name="age" value="" id="{{ user.age }}" id="">
+                  
+                    
+                    <a href="/pre" style="font-size: 0.5rem;color: black;padding-top: 10px;margin-bottom: 50px;">Se connecter plutot</a>
+                    
+                    <button type="submit">soumettre</button>
+                </form>
+
+            </div>
+        </div>
+    </header>
+</body>
+</html>
+
+
+
+
+
+
+

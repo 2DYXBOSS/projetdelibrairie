@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/CSS/profil.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ajoutons" >
+        <div class="eduz">
+           
+            <a href="/add_data" >Inscrire un utilisateur</a>
+            <h3>J'AJOUTE UN NOUVEAU UTILISATEUR</h3>
+        </div>
+        <div class="sys">
+            
+            <a href="/add_objet" >Ajouter de produit</a>
+            <h3>AJOUTER UN PRODUIT</h3>
+        </div>
+        <div class="sys">
+            
+            <a href="/achat" >Voir mes articles</a>
+            <h3>voir mes articles</h3>
+        </div>
+    </div>
+  
+    
+    <br>
+    
+
+    <h1></h1>
+
+    <table>
+     
+        <thead>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>PRIX</th>
+            
+        </thead>
+        {% for data in profil %}
+        <tbody >
+            <td>{{data.id}}</td>
+            <td>{{data.nom}}</td>
+            <td>{{data.description}}</td>
+            <td>{{data.prix}}</td>
+            <td ><a href="/deletearticles/{{data.id}}" class="suppr">SUPPRIMER</a></td>
+            <td ><a href="/update/{{data.id}}" class="modif">MODIFIER</a></td>
+            
+        </tbody>
+        {% endfor %}
+        
+       
+    
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>MON PROFIL</h3>
+    <a href="/add_data">Inscrire un utilisateur</a>
+    <h3>BOUTIQUE</h3>
+    <a href="/add_boutique">Ajouter des marchandises</a>
+    <h3>HOME</h3>
+    <a href="/add_boutique">Ajouter des marchandises</a>
+    <br>
+    <br>
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>NOM</th>
+            <th>PRENOM</th>
+            <th>AGE</th>
+            <th>AUTRE</th>
+        </thead>
+        {% for data in pro %}
+        <tbody>
+            <td>{{data.id}}</td>
+            <td>{{data.nom}}</td>
+            <td>{{data.description}}</td>
+            <td>{{data.prix}}</td>
+            <td><a href="/delete/{{data.id}}">SUPPRIMER</a></td>
+            <td><a href="/join">MODIFIER</a></td>
+            
+        </tbody>
+        {% endfor %}
+    </table>
+
+
+</body>
+</html> -->
