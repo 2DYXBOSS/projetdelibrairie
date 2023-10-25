@@ -5,7 +5,7 @@ from flask import render_template , redirect , request,url_for,flash,session ,Re
 from werkzeug.utils import secure_filename
 import urllib.request
 import os
-
+import openai
 # import os
 # from . import create_table
 # from .m
@@ -572,12 +572,7 @@ def upload_image():
 @app.route('/display/<filename>')
 def display_image(filename):
     #print('display_image filename: ' + filename)
-    return redirect(url_for('static', filename= filename), code=301)
-
-
-
-
-
+    return redirect(url_for('static', filename = filename), code=301)
 
 
 
@@ -623,8 +618,46 @@ def display_image(filename):
 #     #print('display_image filename: ' + filename)
 #     return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+openai.api_key = "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"
+
+
+@app.route('/recherche', methods=['GET','POST'])
+def prompt():
+    if request.method == 'POST':
+        prompt = request.form.get('prompt')
+        response = openai.Image.create(
+            prompt=prompt,
+            n=1,
+            size = "512x512",
+        )
+        print(response)
+        image_url = response['data'][0]['url']
+        return render_template('recherche.html', image_url=image_url)
+    else :
+        return render_template('recherche.html')
+
+
+
+
 if __name__ == '__main__' :
-    app.run(debug=True, port=5002)
+    app.run(debug=True)
 
 
 

@@ -1,5 +1,114 @@
 
 
+
+
+
+
+
+<!-- //templates/index.html
+<html>
+<head>
+<title>Python Flask Upload and display image</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+<p><h1 align="center">Python Flask Upload and display image</h1></p>
+<div class="container">
+<div class="row">
+    <h2>Select a file to upload</h2>
+    <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p>
+    {% if filename %}
+        <div>
+            <img src="{{ url_for('display_image', filename=filename) }}">
+        </div>
+    {% endif %}
+    <form method="post" action="/" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <input type="file" name="file" class="form-control" autocomplete="off" required>
+            </p>
+        </dl>
+        <p>
+            <input type="submit" value="Submit" class="btn btn-info">
+        </p>
+    </form>
+</div>
+</div>
+</body>
+</html> -->
+
+
+
+
+
+<!-- 
+
+//templates/index.html
+<html>
+<head>
+<title>Python Flask Upload and display image</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+<p><h1 align="center">Python Flask Upload and display image</h1></p>
+<div class="container">
+<div class="row">
+    <h2>Select a file to upload</h2>
+    <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p>
+    {% if filename %}
+        <div>
+            <img src="{{ url_for('display_image', filename=filename) }}"> 
+        </div>
+    {% endif %}
+
+    filename = response -->
+    <!-- <form method="post" action="/" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <input type="file" name="file" class="form-control" autocomplete="off" required>
+            </p>
+        </dl>
+        <p>
+            <input type="submit" value="Submit" class="btn btn-info">
+        </p>
+    </form>
+</div>
+</div>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +124,12 @@
 <body>
     <div class="navhaut">
         <div class="reche1">
-            <input type="text" name="" id="" placeholder="Faites vos recherces ici et maintenant">
+            
+            <form action="" method="POST" style="width: 100%;display: flex;align-items: center;justify-content: center;transform: translateX(300px);">
+                <input type="text" name="prompt" id="prompt" placeholder="Faites vos recherces ici et maintenant">
+                
+                <input type="submit" value="Valider" placeholder="Recherche" style="height: 30px;width: 100px;background-color: #570057;color: white;border-radius: 1px;display: flex;align-items: center;justify-content: center;">
+            </form>
         </div>
         <div class="reche2">
             <div class="notif">
@@ -96,47 +210,17 @@
     </div>
     
     <div class="page12">
-        <h1 style="text-align: center;color: #8b00fc;font-size: 3rem;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;padding-bottom: 50px;">PAYEMENT</h1>
+        <h1 style="text-align: center;color: #8b00fc;font-size: 3rem;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;padding-bottom: 50px;">Mes recherches</h1>
         <div class="livres">
-            
-            
-            <div class="payement">
-                <div class="pyee">
-                    <div class="mp">
-                        <!-- {% with messages = get_flashed_messages() %}
-                            {% if messages %}
-                            <ul style="text-align: center;">
-                                {% for message in messages %}
-                                <li style="color: red;list-style-type: none;font-size: 0.8rem;padding-bottom: 20px;">{{ message }}</li>
-                                {% endfor %}
-                            </ul>
-                            {% endif %}
-                            {% endwith %} -->
-                        <div class="hea2">
-                            <strong><p style="color: rgba(162, 117, 204, 0.555);"><span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 3rem;color: blueviolet;">B</span>lay Library</p></strong>
-                        </div>
-                        <div class="hea2">
-                            <h2 style="color: blueviolet;font-size: 1.3rem;margin-bottom: 10px;">Payement</h2>
-                        </div>
-                       
-                        
-                        <div class="qr" style="box-shadow: 1px 1px 5px grey;">
-                            <img src="{{ url_for('static', filename='IMAGES/cde.jpeg') }}" height="100%" width="100%" alt="">
-                        </div>
-                        <button style="margin-top: 20px;padding: 10px 25px; 
-                        color: white;
-                        text-decoration: none;
-                        background-color: rgb(139, 0, 252);border: none;" type="submit" >Payer</button>
-                    </div>
-                    <div class="mp1">
-                       
-                    </div>
-                </div>
-                <!-- <div class="pyee2">
-                    <img src="{{ url_for('static', filename='IMAGES/cde.jpg') }}" alt="">
-                </div> -->
-            </div>
-            
+        
+        
+        <div id="image-container">
+            {% if image_url %}
+                <img src="{{ image_url }}" alt="Image">
+                
+            {% endif %}
+        </div>
+           
      
 
         </div>
