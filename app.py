@@ -1,11 +1,11 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+# from flask_migrate import Migrate
 from flask import render_template , redirect , request,url_for,flash,session ,Response
 from werkzeug.utils import secure_filename
 import urllib.request
 import os
-import openai
+# import openai
 # import os
 # from . import create_table
 # from .m
@@ -29,14 +29,19 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 
 db = SQLAlchemy(app)
-migrate = Migrate(app,db)
+# migrate = Migrate(app,db)
 
 
 debug = True
 # login_manager = LoginManager()
 # login_manager.init_app(app)
 
-
+with app.app_context() :
+    try :
+        db.create_all()
+    except Exception as e:
+        print("error de creation de la table")
+    
 # creation de ma table dans la base de donnée 
 class Profil(db.Model):
 
@@ -62,6 +67,13 @@ class Profil(db.Model):
             "last_name": self.last_name,
             "age": self.age
         }
+    
+
+with app.app_context() :
+    try :
+        db.create_all()
+    except Exception as e:
+        print("error de creation de la table")
 class Connecter(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
@@ -115,6 +127,12 @@ class Connecter(db.Model):
 #             "prix": self.prix,
 #             
 #         }
+
+with app.app_context() :
+    try :
+        db.create_all()
+    except Exception as e:
+        print("error de creation de la table")
 class Panierz(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
@@ -141,6 +159,13 @@ class Panierz(db.Model):
             "prix": self.prix,
             "image": self.image
         }
+    
+
+with app.app_context() :
+    try :
+        db.create_all()
+    except Exception as e:
+        print("error de creation de la table")
 class Userpaniere(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
@@ -169,6 +194,12 @@ class Userpaniere(db.Model):
             "mail": self.mail
         }
 
+
+with app.app_context() :
+    try :
+        db.create_all()
+    except Exception as e:
+        print("error de creation de la table")
 class Img(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
@@ -645,23 +676,23 @@ def display_image(filename):
 
 
 
-openai.api_key = "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"
+# openai.api_key = "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"
 
 
-@app.route('/recherche', methods=['GET','POST'])
-def prompt():
-    if request.method == 'POST':
-        prompt = request.form.get('prompt')
-        response = openai.Image.create(
-            prompt=prompt,
-            n=1,
-            size = "512x512",
-        )
-        print(response)
-        image_url = response['data'][0]['url']
-        return render_template('recherche.html', image_url=image_url)
-    else :
-        return render_template('recherche.html')
+# @app.route('/recherche', methods=['GET','POST'])
+# def prompt():
+#     if request.method == 'POST':
+#         prompt = request.form.get('prompt')
+#         response = openai.Image.create(
+#             prompt=prompt,
+#             n=1,
+#             size = "512x512",
+#         )
+#         print(response)
+#         image_url = response['data'][0]['url']
+#         return render_template('recherche.html', image_url=image_url)
+#     else :
+#         return render_template('recherche.html')
 
 
 
