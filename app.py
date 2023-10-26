@@ -641,7 +641,7 @@ def display_image(filename):
 
 
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 @app.route('/recherche', methods=['GET','POST'])
