@@ -278,26 +278,7 @@ def suppanier() :
 
 
 
-@app.route('/recup')
-def recup():
-    data = Img.query.get(Img.id)
-    return redirect('recu.html',Response(data.name, mimetype=data.mimetype))
 
-# @app.route('/ee/<int:id>')
-# def ee(id):
-#     data = Img.query.get(id)
-#     return redirect(url_for('ee', id=id),Response(data.img, mimetype=data.mimetype))
-
-
-@app.route('/upload',methods = ["POST"])
-def upload():
-    pic = request.files['pic']
-    filename = secure_filename(pic.filename)
-    mimetype = pic.mimetype
-    img = Img(img = pic.read(),name = filename,mimetype = mimetype)
-    db.session.add(img)
-    db.session.commit()
-    return redirect("/")
 
 
 @app.route('/achat')
@@ -310,17 +291,19 @@ def achl():
 @app.route('/objet',methods = ["POST"])
 def objet(): 
     
-    
-    nom = request.form.get("nom")
-    description = request.form.get("description")
-    prix = request.form.get("prix")
-    image = request.form.get("image")
-    pani = Panierz(nom = nom, description = description , prix = prix, image = image)
-    # pani = Panier(nom = nom, description = description , prix = prix)
-    
-    db.session.add(pani)
-    db.session.commit()
-    return redirect("/profil")
+    try :
+        nom = request.form.get("nom")
+        description = request.form.get("description")
+        prix = request.form.get("prix")
+        image = request.form.get("image")
+        pani = Panierz(nom = nom, description = description , prix = prix, image = image)
+        # pani = Panier(nom = nom, description = description , prix = prix)
+        
+        db.session.add(pani)
+        db.session.commit()
+        return redirect("/profil")
+    except :
+        return render_template("/boutique.html")
     
 # redirection vers la page admin pour voirs les articles ajouter
 @app.route('/profil')
@@ -524,7 +507,27 @@ def update(id):
 
 
 
+@app.route('/recup')
+def recup():
+    data = Img.query.get(Img.id)
+    return redirect('recu.html',Response(data.name, mimetype=data.mimetype))
 
+# @app.route('/ee/<int:id>')
+# def ee(id):
+#     data = Img.query.get(id)
+#     return redirect(url_for('ee', id=id),Response(data.img, mimetype=data.mimetype))
+
+
+@app.route('/upload',methods = ["POST"])
+def upload():
+    pic = request.files['pic']
+    filename = secure_filename(pic.filename)
+    mimetype = pic.mimetype
+    img = Img(img = pic.read(),name = filename,mimetype = mimetype)
+    print(img)
+    db.session.add(img)
+    db.session.commit()
+    return redirect("/recup")
 
 
 
@@ -550,29 +553,32 @@ def add_objet():
  
 @app.route('/add_objet', methods=['POST'])
 def upload_image():
-    if 'file' not in request.files:
-        flash('No file part')
-        return redirect(request.url)
-    file = request.files['file']
-    print(file.filename)
-    if file.filename == '':
-        flash('Aucune image sélectionnée pour le téléchargement')
-        return redirect(request.url)
-    if file and allowed_file(file.filename):
-        filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        #print('upload_image filename: ' + filename)
-        flash('Image téléchargée avec succès et affichée ci-dessous')
-        return render_template('boutique.html', filename=file.filename)
-        # return render_template('boutique.html', filename=filename)
-    else:
+    try :
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        print(file.filename)
+        if file.filename == '':
+            flash('Aucune image sélectionnée pour le téléchargement')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            #print('upload_image filename: ' + filename)
+            flash('Image téléchargée avec succès et affichée ci-dessous')
+            return render_template('boutique.html', filename=file.filename)
+            # return render_template('boutique.html', filename=filename)
+    except:
         flash('Les types dimages autorisés sont - png, jpg, jpeg, gif')
         return redirect(request.url)
+
+        # uploads.image
  
 @app.route('/display/<filename>')
 def display_image(filename):
     #print('display_image filename: ' + filename)
-    return redirect(url_for('static', filename = filename), code=301)
+    return redirect(url_for('static', filename = 'uploads/' + filename), code=301)
 
 
 
@@ -635,7 +641,7 @@ def display_image(filename):
 
 
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 @app.route('/recherche', methods=['GET','POST'])
