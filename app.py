@@ -190,6 +190,10 @@ class Img(db.Model):
 def Payement() :
 
     return render_template('payement.html')
+@app.route('/place')
+def place() :
+
+    return "render_template('payement.html')"
 
 
 
@@ -641,7 +645,7 @@ def display_image(filename):
 
 
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 @app.route('/recherche', methods=['GET','POST'])
