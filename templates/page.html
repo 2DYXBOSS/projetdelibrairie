@@ -1,0 +1,415 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/CSS/profil.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ajoutons" >
+        <div class="eduz">
+           
+            <a href="/add_data" >Inscrire un utilisateur</a>
+            <h3>J'AJOUTE UN NOUVEAU UTILISATEUR</h3>
+        </div>
+        <div class="sys">
+            
+            <a href="/add_product" >Ajouter de produit</a>
+            <h3>AJOUTER UN PRODUIT</h3>
+        </div>
+        <div class="sys">
+            
+            <a href="/achat" >Ajouter de produit</a>
+            <h3>voir mes articles</h3>
+        </div>
+    </div>
+  
+    
+    <br>
+    
+
+    <h1></h1>
+
+    <table>
+     
+        <thead>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>PRIX</th>
+            
+        </thead>
+        {% for data in profil %}
+        <tbody >
+            <td>{{data.id}}</td>
+            <td>{{data.nom}}</td>
+            <td>{{data.description}}</td>
+            <td>{{data.prix}}</td>
+            <td ><a href="/deletearticles/{{data.id}}" class="suppr">SUPPRIMER</a></td>
+            <td ><a href="/update/{{data.id}}" class="modif">MODIFIER</a></td>
+            
+        </tbody>
+        {% endfor %}
+        
+       
+    
+    </table>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/CSS/profil.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ajoutons" >
+        <div class="eduz">
+           
+            <a href="/add_data" >Inscrire un utilisateur</a>
+            <h3>J'AJOUTE UN NOUVEAU UTILISATEUR</h3>
+        </div>
+        <div class="sys">
+            
+            <a href="/add_product" >Ajouter de produit</a>
+            <h3>AJOUTER UN PRODUIT</h3>
+        </div>
+    </div>
+  
+    
+    <br>
+    
+
+    <h1></h1>
+
+    <table>
+     
+        <thead>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>PRIX</th>
+            
+        </thead>
+        {% for data in aer %}
+        <tbody >
+            <td>{{data.id}}</td>
+            <td>{{data.nom}}</td>
+            <td>{{data.description}}</td>
+            <td>{{data.prix}}</td>
+            <td ><a href="/deletearticles/{{data.id}}" class="suppr">SUPPRIMER</a></td>
+            <td ><a href="/update/{{data.id}}" class="modif">MODIFIER</a></td>
+            
+        </tbody>
+        {% endfor %}
+        
+       
+    
+    </table>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/CSS/home.css">
+
+</head>
+<body>
+    <div class="navhaut">
+        <div class="reche1">
+            <input type="text" name="" id="" placeholder="Faites vos recherces ici et maintenant">
+        </div>
+        <div class="reche2">
+            
+        </div>
+    </div>
+    <div class="navgauche">
+        <div class="logoa" style="text-align: center;padding-top: 30px;">
+            <input type="checkbox" style="display: none;" name="" id="cliquer">
+            <label for="cliquer">
+                <img src="static/IMAGES/me.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
+            </label>
+            <div class="lishd">
+                <nav>
+                    <ul>
+                        <li style="list-style-type: none;"><a style="text-decoration: none;color: #8b00fc;" href="/"> <h1 style="text-align: center;color: #8b00fc;font-size: 1.5rem;font-weight: bolder;">            <img src="static/IMAGES/home-removebg-preview.png " style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
+                            Acceuil</h1></a></li>
+                        
+                        
+                        <li style="list-style-type: none;"><a style="text-decoration: none;color: #8b00fc;" href="/sprome"><h1 style="text-align: center;color: #8b00fc;font-size: 1.5rem;font-weight: bolder;">            <img src="static/IMAGES/dec-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
+                            J'ai un compte</h1></a></li>
+
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+        <div class="logo">
+            <h1 style="padding-top: 10px;color: #8b00fc;font-size: 3rem;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">B</h1>
+            <p style="font-size: 0.8rem;padding-top: 40px;color: rgb(196, 166, 196);">lay  Libray</p>
+        </div>
+        <div class="logo1">
+            <img src="static/IMAGES/home-removebg-preview.png " style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
+            
+            <a href="/" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Acceuil</a>
+
+        </div>
+       
+        
+        <div class="logo3">
+            <img src="static/IMAGES/dec-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
+           
+            <a href="/sprome" style="padding-left: 10px;text-decoration: none;color: #570057;font-size: 0.8rem;">Compte</a>
+
+        </div>
+    </div>
+    <div class="navdroite">
+        
+    </div>
+    
+    <div class="page12" style="background-color: rgb(139, 0, 252);">
+       
+        <div class="livres" style="background-color: rgb(139, 0, 252);" >
+            <h1 style="text-align: center;color: white;font-size: 3rem;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;padding-bottom: 50px;margin: 0 auto;">AUTHENTICATIONS</h1>
+
+            <div class="jgkjze">
+                <a href="/add_data" style="text-decoration: none;color: rgb(139, 0, 252);font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 2rem;display: flex;justify-content: center;align-items: center;">INSCRIPTION</a>
+                <a href="/pre" style="text-decoration: none;color: rgb(139, 0, 252);font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 2rem;display: flex;justify-content: center;align-items: center;">CONNEXION</a>
+            </div>
+            <p style="margin-top: 100px;text-align: center;color: white;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores voluptatem ut ea alias qui non veritatis fugit doloribus vel exercitationem cumque fuga rem reprehenderit corrupti, soluta blanditiis omnis. Vitae, vero?
+            orem ipsum dolor sit amet consectetur, adipisicing elit. Dolores voluptatem ut ea alias qui non veritatis fugit doloribus vel exercitationem cumque fuga rem reprehenderit corrupti, soluta blanditiis omnis. Vitae, vero?</p>
+        </div>
+        
+        <div class="sac">
+
+        </div>
+    </div>
+    <!-- <div class="page">
+        <div class="page1">
+       
+        </div>
+        <div class="page1">
+           
+        </div>
+        <div class="page1">
+    
+        </div>
+    </div> -->
+</body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/CSS/profil.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ajoutons" >
+        <div class="eduz">
+           
+            <a href="/add_data" >Inscrire un utilisateur</a>
+            <h3>J'AJOUTE UN NOUVEAU UTILISATEUR</h3>
+        </div>
+        <div class="sys">
+            
+            <a href="/add_product" >Ajouter de produit</a>
+            <h3>AJOUTER UN PRODUIT</h3>
+        </div>
+    </div>
+  
+    
+    <br>
+    
+
+    <h1></h1>
+
+    <table>
+     
+        <thead>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>PRIX</th>
+            
+        </thead>
+        {% for data in aer %}
+        <tbody >
+            <td>{{data.id}}</td>
+            <td>{{data.nom}}</td>
+            <td>{{data.description}}</td>
+            <td>{{data.prix}}</td>
+            <td ><a href="/deletearticles/{{data.id}}" class="suppr">SUPPRIMER</a></td>
+            <td ><a href="/update/{{data.id}}" class="modif">MODIFIER</a></td>
+            
+        </tbody>
+        {% endfor %}
+        
+       
+    
+    </table>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/CSS/achat.css">
+
+</head>
+<body>
+    <div class="navhaut">
+        <div class="reche1">
+            <input type="text" name="" id="" placeholder="Faites vos recherces ici et maintenant">
+        </div>
+        <div class="reche2">
+            <div class="notif">
+                
+            </div>
+            <div class="panie">
+
+            </div>
+            <div class="profil" >
+                
+            </div>
+        </div>
+    </div>
+    <div class="navgauche">
+        <div class="logo">
+            <h1 style="padding-top: 10px;color: #8b00fc;font-size: 3rem;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">B</h1>
+            <p style="font-size: 0.8rem;padding-top: 40px;color: rgb(196, 166, 196);">lay  Libray</p>
+        </div>
+        <div class="logo1">
+            <img src="../image/home-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
+            
+            <a href="" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Acceuil</a>
+
+        </div>
+        <div class="logo1">
+            <img src="../image/bou-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
+         
+            <a href="" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Boutique</a>
+
+        </div>
+        <div class="logo1">
+            <img src="../image/loupe.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
+            <a href="" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Recherche</a>
+
+        </div>
+        <div class="logo1">
+            <img src="../image/contac-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
+            <a href="" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Contact</a>
+        </div>
+        <div class="logo2">
+            <img src="../image/admmi-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
+           
+            <a href="" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Admin</a>
+
+        </div>
+        <div class="logo3">
+            <img src="../image/dec-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
+           
+            <a href="" style="padding-left: 10px;text-decoration: none;color: #570057;font-size: 0.8rem;">Déconnexion</a>
+
+        </div>
+    </div>
+    <div class="navdroite">
+        
+    </div>
+    
+    <div class="page12">
+       
+        <div class="livres">
+            {% for data in aer %}
+            <div class="livre1">
+                <div class="livr1">
+                    <img src="../image/mes-premiers-ani.jpg" width="100%" height="50%" alt="">
+
+                </div>
+                <div class="livr12">
+                    <h1 style="font-size: 1rem;text-align: start;">{{data.nom}}</h1>
+                    <p style="font-size:0.8rem;">{{data.description}}</p>
+                    <h1 style="font-size: 1.3rem;">{{data.prix}}</h1>
+                </div>
+                <div class="livr123">
+                    <a href="/deletearticles/{{data.id}}" class="suppr">acheter</a>
+                    
+                    <a href="">
+                        <img src="../image/panierr.png" width="30px" style="padding-bottom: 10px;padding-right: 5px;" alt="">
+                    </a>
+                </div>
+            </div>
+            
+            {% endfor %}
+            
+            
+            
+            
+            
+          
+            
+            
+            
+
+        </div>
+        
+        <div class="sac">
+
+        </div>
+    </div>
+  
+</body>
+</html> -->
+
+
+
