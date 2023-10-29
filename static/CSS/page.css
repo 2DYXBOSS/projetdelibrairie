@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    
+}
+body {
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+    height: 1100px;
+}
+.hre {
+height: 100%;
+width: 100%;
+background-color: white;
+display: flex;
+align-items: center;
+gap: 20px;
+justify-content: center;
+}
+
+li{
+    list-style-type: none;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.fixe {
+    width: 100%;
+    height: 70px;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    position: fixed;
+    background-color: white;
+}
+
+.lofo {
+    width: 200px;
+    padding-left: 20px;
+    height: 100%;
+
+}
+.lofo1 {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 50%;
+    padding-right: 100px;
+    height: 100%;
+    
+
+}
+.lofo1 nav ul li{
+    list-style-type: none;
+
+}
+.lofo1 nav ul a {
+    text-decoration: none;
+}
+.lofo1 nav ul{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+}
+
+.retyu1 {
+    padding-top: 150px;
+    padding-left: 50px;
+    
+    width: 50%;
+    height: 100%;
+    background-color: white;
+}
+.retyu1 h1{
+    font-size: 4rem;
+}
+.retyu1 a{
+    padding: 15px 25px;
+    background-color:  white;
+    color: rgb(140, 58, 216);
+    border-radius: 5px;
+    border: 1px solid rgb(140, 58, 216)
+}
+.retyu1 a:hover{
+    padding: 15px 25px;
+    background-color: rgb(140, 58, 216);
+    color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(140, 58, 216)
+}
+.retyu2 {
+    display: flex;
+    
+
+    justify-content: center;
+    padding-top: 150px;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+}
