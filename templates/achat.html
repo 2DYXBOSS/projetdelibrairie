@@ -1,139 +1,10 @@
+
+
+
+
+
+
 <!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/CSS/profil.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="ajoutons" >
-        <div class="eduz">
-           
-            <a href="/add_data" >Inscrire un utilisateur</a>
-            <h3>J'AJOUTE UN NOUVEAU UTILISATEUR</h3>
-        </div>
-        <div class="sys">
-            
-            <a href="/add_product" >Ajouter de produit</a>
-            <h3>AJOUTER UN PRODUIT</h3>
-        </div>
-        <div class="sys">
-            
-            <a href="/achat" >Ajouter de produit</a>
-            <h3>voir mes articles</h3>
-        </div>
-    </div>
-  
-    
-    <br>
-    
-
-    <h1></h1>
-
-    <table>
-     
-        <thead>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>DESCRIPTION</th>
-            <th>PRIX</th>
-            
-        </thead>
-        {% for data in profil %}
-        <tbody >
-            <td>{{data.id}}</td>
-            <td>{{data.nom}}</td>
-            <td>{{data.description}}</td>
-            <td>{{data.prix}}</td>
-            <td ><a href="/deletearticles/{{data.id}}" class="suppr">SUPPRIMER</a></td>
-            <td ><a href="/update/{{data.id}}" class="modif">MODIFIER</a></td>
-            
-        </tbody>
-        {% endfor %}
-        
-       
-    
-    </table>
-</body>
-</html> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/CSS/profil.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="ajoutons" >
-        <div class="eduz">
-           
-            <a href="/add_data" >Inscrire un utilisateur</a>
-            <h3>J'AJOUTE UN NOUVEAU UTILISATEUR</h3>
-        </div>
-        <div class="sys">
-            
-            <a href="/add_product" >Ajouter de produit</a>
-            <h3>AJOUTER UN PRODUIT</h3>
-        </div>
-    </div>
-  
-    
-    <br>
-    
-
-    <h1></h1>
-
-    <table>
-     
-        <thead>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>DESCRIPTION</th>
-            <th>PRIX</th>
-            
-        </thead>
-        {% for data in aer %}
-        <tbody >
-            <td>{{data.id}}</td>
-            <td>{{data.nom}}</td>
-            <td>{{data.description}}</td>
-            <td>{{data.prix}}</td>
-            <td ><a href="/deletearticles/{{data.id}}" class="suppr">SUPPRIMER</a></td>
-            <td ><a href="/update/{{data.id}}" class="modif">MODIFIER</a></td>
-            
-        </tbody>
-        {% endfor %}
-        
-       
-    
-    </table>
-</body>
-</html> -->
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -148,99 +19,50 @@
 
 </head>
 <body>
-    <div class="navhaut">
-        <div class="reche1">
-            <input type="text" name="" id="" placeholder="Faites vos recherces ici et maintenant">
-        </div>
-        <div class="reche2">
-            <div class="notif">
-                
-            </div>
-            <div class="panie">
-                <a href="/panieruser"><p style="opacity: 0;">.</p></a>
-            </div>
-            <div class="profil" >
-                <a href="/useprid"><p style="opacity: 0;">.</p></a>
-            </div>
-        </div>
-    </div>
-    <div class="navgauche">
-        <div class="logoa" style="text-align: center;padding-top: 30px;">
-            <input type="checkbox" style="display: none;" name="" id="cliquer">
-            <label for="cliquer">
-                <img src="static/IMAGES/me.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-            </label>
-            <div class="lishd">
-                <div class="dvg">
-                    <nav>
-                        <ul>
-                            <li style="list-style-type: none;"><a style="text-decoration: none;color: #8b00fc;" href="/home"> <h1 style="text-align: start;color: #8b00fc;font-size: 1rem;font-weight: bolder;padding-bottom: 10px;">            <img src="static/IMAGES/home-removebg-preview.png " style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-                                Acceuil</h1></a></li>
-                            <li style="list-style-type: none;"><a style="text-decoration: none;color: #8b00fc;" href="/achat"><h1 style="text-align: start;color: #8b00fc;font-size: 1rem;font-weight: bolder;padding-bottom: 10px;"><img src="static/IMAGES/bou-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt=""> Boutique</h1></a></li>
-                            <li style="list-style-type: none;"><a style="text-decoration: none;color: #8b00fc;" href="/home"><h1 style="text-align: start;color: #8b00fc;font-size: 1rem;font-weight: bolder;padding-bottom: 10px;">            <img src="static/IMAGES/loupe.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-                                Recherche</h1></a></li>
-                            <li style="list-style-type: none;"><a style="text-decoration: none;color: #8b00fc;" href="/profil"><h1 style="text-align: start;color: #8b00fc;font-size: 1rem;font-weight: bolder;padding-bottom: 10px;">   <img src="static/IMAGES/admmi-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-                                Admin</h1></a></li>
-                            <li style="list-style-type: none;"><a style="text-decoration: none;color: #8b00fc;" href="/sprome"><h1 style="text-align: start;color: #8b00fc;font-size: 1rem;font-weight: bolder;padding-bottom: 10px;">            <img src="static/IMAGES/dec-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-                                Deconnexion</h1></a></li>
     
-                        </ul>
-                    </nav>
-                </div>
-            </div>
 
-        </div>;
-        <div class="logo">
-            <h1 style="padding-top: 10px;color: #8b00fc;font-size: 3rem;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">B</h1>
-            <p style="font-size: 0.8rem;padding-top: 40px;color: rgb(196, 166, 196);">lay  Libray</p>
-        </div>
-        <div class="logo1">
-            <img src="static/IMAGES/home-removebg-preview.png " style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-            
-            <a href="/home" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Acceuil</a>
+
+    <div class="fixe">
+        <div class="lofo">
+            <strong><p style="color: rgba(162, 117, 204, 0.555);"><span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 3rem;color: white">B</span>lay Library</p></strong>
 
         </div>
-        <div class="logo1">
-            <img src="static/IMAGES/bou-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-         
-            <a href="/achat" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Boutique</a>
-
-        </div>
-        <div class="logo1">
-            <img src="static/IMAGES/loupe.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-            <a href="/recherche" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Recherche</a>
-
-        </div>
-        <div class="logo1">
-            <img src="static/IMAGES/contac-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-            <a href="" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Contact</a>
-        </div>
-        <div class="logo2">
-            <img src="static/IMAGES/admmi-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-           
-            <a href="/profil" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Admin</a>
-
-        </div>
-        <div class="logo3">
-            <img src="static/IMAGES/dec-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-           
-            <a href="/sprome" style="padding-left: 10px;text-decoration: none;color: #570057;font-size: 0.8rem;">Déconnexion</a>
+        <div class="lofo1">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/home">Acceuil</a>
+                    </li>
+                    <li>
+                        <a href="/achat" style="font-weight: bolder;">Nos produits</a>
+                    </li>
+                    <li>
+                        <a href="/">Nos produits</a>
+                    </li>
+                    <li>
+                        <a href="/deconnexion">Deconnexion</a>
+                    </li>
+                    <li>
+                        <a href="/panieruser">Mes articles</a>
+                    </li>
+                    <li>
+                        <a style="padding: 15px 20px;background-color: white;color: orange;border-radius: 10px;" href="/useprid">Compte</a>
+                        
+                    </li>
+                </ul>
+            </nav>
 
         </div>
     </div>
-    <div class="navdroite">
-        
-    </div>
-    
-    <div class="page12">
-       
-        <div class="livres">
-            {% for data in aer %}
+    <div class="hre">
+        <a style="padding: 25px 25px;background-color: white;color: rgb(245, 167, 0);border-radius: 5px;border: 1px solid rgb(245, 167, 0);" href="/add_data">INSCRIPTION</a>
+        <a style="padding: 25px 25px;background-color: white;color: rgb(245, 167, 0);border-radius: 5px;border: 1px solid rgb(245, 167, 0)" href="/pre">CONNEXION</a> 
+        {% for data in aer %}
             <div class="livre1">
                 <div class="livr1">
-                    <!-- <img src="{{url_for('static', filename='uploads/{{data.image}}')}}" width="100%" height="50%" alt=""> -->
+                    <img src="{{url_for('static', filename='uploads/{{data.image}}')}}" width="100%" height="50%" alt=""> 
                     <img src="{{url_for('static', filename='uploads/' + data.image)}}" width="100%" height="100%" alt="">
-                    <!-- <img src="{{url_for('static', filename='IMAGES/{{data.image}}')}}" width="100%" height="50%" alt=""> -->
+                    <img src="{{url_for('static', filename='IMAGES/{{data.image}}')}}" width="100%" height="50%" alt=""> 
                 </div>
                 
                 <div class="livr12">
@@ -250,14 +72,13 @@
                     <h1 style="font-size: 1rem;">{{data.prix}} FCFA</h1>
                 </div>
                 <div class="livr123">
-                    <form action="/new" method="post" >
+                    <form action="/new" method="post" style="background-color: #8b00fc;display: grid;">
                         <input style="opacity: 0;height: 0;width: 0;" type="text" name="nom" value="{{data.nom}}">
                         <input style="opacity: 0;height: 0;width: 0;"  type="text" name="desc" value="{{data.description}}">
                         <input style="opacity: 0;height: 0;width: 0;"  type="text" name="prix" value="{{data.prix}}">
                         <button type="submit" style="background-color: rgb(173, 130, 214);border: none;color: white;padding: 5px 10px;">acheter</button>
                     </form>
-                    <!-- <a href="/delete/{{data.id}}" class="achat">acheter</a> -->
-             
+                     <a href="/delete/{{data.id}}" class="achat">acheter</a> 
                     <a href="">
                         <img src="../image/panierr.png" width="30px" style="padding-bottom: 10px;padding-right: 5px;" alt="">
                     </a>
@@ -265,111 +86,20 @@
             </div>
             
             {% endfor %}
-            
-            
-            
-            
-            
-          
-<!--             
-            {% for data in profil %}
-        <tbody >
-            <td>{{data.id}}</td>
-            <td>{{data.nom}}</td>
-            <td>{{data.description}}</td>
-            <td>{{data.prix}}</td>
-            <td ><a href="/deletearticles/{{data.id}}" class="suppr">SUPPRIMER</a></td>
-            <td ><a href="/update/{{data.id}}" class="modif">MODIFIER</a></td>
-            
-        </tbody>
-        {% endfor %} -->
-            
-
-        </div>
-        
-        <div class="sac">
-
-        </div>
     </div>
-    <!-- <div class="page">
-        <div class="page1">
-       
-        </div>
-        <div class="page1">
-           
-        </div>
-        <div class="page1">
-    
-        </div>
-    </div> -->
-</body>
-</html>
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/CSS/profil.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="ajoutons" >
-        <div class="eduz">
-           
-            <a href="/add_data" >Inscrire un utilisateur</a>
-            <h3>J'AJOUTE UN NOUVEAU UTILISATEUR</h3>
-        </div>
-        <div class="sys">
-            
-            <a href="/add_product" >Ajouter de produit</a>
-            <h3>AJOUTER UN PRODUIT</h3>
-        </div>
-    </div>
-  
-    
-    <br>
-    
-
-    <h1></h1>
-
-    <table>
-     
-        <thead>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>DESCRIPTION</th>
-            <th>PRIX</th>
-            
-        </thead>
-        {% for data in aer %}
-        <tbody >
-            <td>{{data.id}}</td>
-            <td>{{data.nom}}</td>
-            <td>{{data.description}}</td>
-            <td>{{data.prix}}</td>
-            <td ><a href="/deletearticles/{{data.id}}" class="suppr">SUPPRIMER</a></td>
-            <td ><a href="/update/{{data.id}}" class="modif">MODIFIER</a></td>
-            
-        </tbody>
-        {% endfor %}
-        
-       
-    
-    </table>
 </body>
 </html> -->
 
 
 
-<!-- <!DOCTYPE html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -379,111 +109,68 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/CSS/achat.css">
-
 </head>
 <body>
-    <div class="navhaut">
-        <div class="reche1">
-            <input type="text" name="" id="" placeholder="Faites vos recherces ici et maintenant">
-        </div>
-        <div class="reche2">
-            <div class="notif">
-                
-            </div>
-            <div class="panie">
-
-            </div>
-            <div class="profil" >
-                
-            </div>
-        </div>
-    </div>
-    <div class="navgauche">
-        <div class="logo">
-            <h1 style="padding-top: 10px;color: #8b00fc;font-size: 3rem;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">B</h1>
-            <p style="font-size: 0.8rem;padding-top: 40px;color: rgb(196, 166, 196);">lay  Libray</p>
-        </div>
-        <div class="logo1">
-            <img src="../image/home-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-            
-            <a href="" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Acceuil</a>
+    <div class="fixe">
+        <div class="lofo" style="padding-left: 45px;padding-top: 10px;">
+            <strong><p style="color: rgba(162, 117, 204, 0.555);"><span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 3rem;color: rgb(140, 58, 216)">B</span>lay Library</p></strong>
 
         </div>
-        <div class="logo1">
-            <img src="../image/bou-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-         
-            <a href="" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Boutique</a>
+        <div class="lofo1">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/home" style="color: rgb(116, 116, 116);">Acceuil</a>
+                    </li>
+                    <li>
+                        <a href="/achat" style="color: rgb(116, 116, 116);">Nos publications</a>
+                    </li>
+                    <li>
+                        <a href="/home#apeo" style="color: rgb(116, 116, 116);">A propos de nous</a>
+                    </li>
+                    
+                    <li>
+                        <a style="padding: 15px 20px;background-color: white;color: #8c3ad8;border-radius: 10px;" href="/useprid">Compte</a>
+                        
+                    </li>
+                    <li>
+                        <a style="padding: 15px 20px;background-color: white;color: #8c3ad8;border-radius: 10px;" href="/panieruser"><img src="{{url_for('static', filename='IMAGES/charrete.png')}}" style="filter: invert(24%) sepia(50%) saturate(3691%) hue-rotate(260deg) brightness(95%) contrast(92%);" alt="" height="30px" width="30px"><span style="color:rgb(31, 255, 31);font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bolder;font-size: 2rem;">0</span></a>
+                        
+                    </li>
+                </ul>
+            </nav>
 
         </div>
-        <div class="logo1">
-            <img src="../image/loupe.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-            <a href="" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Recherche</a>
-
-        </div>
-        <div class="logo1">
-            <img src="../image/contac-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-            <a href="" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Contact</a>
-        </div>
-        <div class="logo2">
-            <img src="../image/admmi-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-           
-            <a href="" style="font-size: 0.8rem;padding-left: 10px;text-decoration: none;color: #570057;">Admin</a>
-
-        </div>
-        <div class="logo3">
-            <img src="../image/dec-removebg-preview.png" style="filter: invert(10%) sepia(98%) saturate(6704%) hue-rotate(275deg) brightness(102%) contrast(120%);" height="20px" alt="">
-           
-            <a href="" style="padding-left: 10px;text-decoration: none;color: #570057;font-size: 0.8rem;">Déconnexion</a>
-
-        </div>
-    </div>
-    <div class="navdroite">
-        
     </div>
     
-    <div class="page12">
-       
-        <div class="livres">
-            {% for data in aer %}
-            <div class="livre1">
-                <div class="livr1">
-                    <img src="../image/mes-premiers-ani.jpg" width="100%" height="50%" alt="">
-
-                </div>
-                <div class="livr12">
-                    <h1 style="font-size: 1rem;text-align: start;">{{data.nom}}</h1>
-                    <p style="font-size:0.8rem;">{{data.description}}</p>
-                    <h1 style="font-size: 1.3rem;">{{data.prix}}</h1>
-                </div>
-                <div class="livr123">
-                    <a href="/deletearticles/{{data.id}}" class="suppr">acheter</a>
-                    
-                    <a href="">
-                        <img src="../image/panierr.png" width="30px" style="padding-bottom: 10px;padding-right: 5px;" alt="">
-                    </a>
-                </div>
+    <div class="hre">
+        <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;color: rgb(140, 58, 216);;">LES ARTICLES</h1>
+        {% for data in aer %}
+        <div class="nkqekj">
+            <div class="retyu2">
+                <img src="{{url_for('static', filename='uploads/' + data.image)}}" height="300px" width="250px" alt="">
             </div>
-            
-            {% endfor %}
-            
-            
-            
-            
-            
-          
-            
-            
-            
-
+            <div class="retyu1">
+                <p style="color: rgb(105, 105, 105);">Faites plaisir a vos proches avec cet article</p>
+                
+                <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bolder;font-size: 2rem;text-transform: uppercase;">{{data.nom}}</h1>
+                <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bolder;color: rgb(140, 58, 216);padding-bottom: 20px;font-size: 2rem;text-transform: uppercase;">{{data.prix}} FCFA</h1>
+                <p style="margin-bottom: 20px;">{{data.description}}</p>
+                <form action="/new" method="post" style="background-color: white;display: flex;justify-content: start;">
+                    <input style="opacity: 0;height: 0;width: 0;" type="text" name="nom" value="{{data.nom}}">
+                    <input style="opacity: 0;height: 0;width: 0;"  type="text" name="desc" value="{{data.description}}">
+                    <input style="opacity: 0;height: 0;width: 0;"  type="text" name="prix" value="{{data.prix}}">
+                    <button type="submit" >AJOUTER AU PANIER</button>
+                    <a  href="Payement">ACHETER</a>
+                </form>
+               
+                <!-- <a style="padding: 10px 10px;background-color: white;color: rgb(140, 58, 216);border-radius: 5px;border: 1px solid rgb(140, 58, 216);margin-bottom: 200px;" href="">PANIER</a> -->
+            </div>
+           
         </div>
-        
-        <div class="sac">
+        {% endfor %}
+       
 
-        </div>
     </div>
-  
 </body>
-</html> -->
-
-
-
+</html>
