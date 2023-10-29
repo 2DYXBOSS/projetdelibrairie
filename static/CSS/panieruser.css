@@ -1,0 +1,147 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    
+}
+@media (min-width:10px) and (max-width:1400px) {
+    .lofo1 {
+        display: none;
+    }
+}
+@media (min-width:1400px) {
+    .lofo1 {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 50%;
+        padding-right: 100px;
+        height: 100%;
+        
+    
+    }
+    .lofo1 nav ul li{
+        list-style-type: none;
+    
+    }
+    .lofo1 nav ul a {
+        text-decoration: none;
+    }
+    .lofo1 nav ul{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    
+    }
+}
+/* .paeh {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    top: 100px;
+    right: 50px;
+} */
+body {
+    width: 100%;
+    padding-top: 200px;
+    background-color: white;
+    height: 1100px;
+}
+.hre {
+height: 100%;
+width: 100%;
+background-color: white;
+display: flex;
+align-items: center;
+flex-direction: column;
+gap: 20px;
+justify-content: center;
+}
+.nkqekj {
+/* height: 400px; */
+width: 70%;
+margin-bottom: 20px;
+padding: 20px;
+padding-bottom: 20px;
+background-color: white;
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+box-shadow: 0.5px 0.5px 5px 0.5px rgb(232, 223, 241);
+}
+.nkqekj a, button{
+    padding: 10px 10px;
+    background-color: white;
+    color: rgb(140, 58, 216);
+    border-radius: 5px;
+    border: 1px solid rgb(140, 58, 216);
+    margin-right: 10px;
+}
+.nkqekj button:hover {
+    padding: 10px 10px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid red;
+}
+.nkqekj a:hover{
+    padding: 10px 10px;
+    background-color: rgb(140, 58, 216);
+    color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(140, 58, 216);
+}
+
+li{
+    list-style-type: none;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.fixe {
+    width: 100%;
+    height: 70px;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    position: fixed;
+    background-color: white;
+}
+
+.lofo {
+    width: 200px;
+    padding-left: 20px;
+    height: 100%;
+
+}
+
+
+
+.retyu1 {
+  
+    /* padding-left: 50px; */
+    width: 400px;
+ 
+    background-color: white;
+}
+.retyu1 h1{
+    font-size: 4rem;
+}
+
+.retyu2 {
+    
+    width: 400px;
+ 
+    background-color: white;
+}
