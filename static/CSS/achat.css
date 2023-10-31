@@ -5,20 +5,20 @@
     font-family: 'Poppins', sans-serif;
     
 }
-@media (min-width:10px) and (max-width:1400px) {
+@media (min-width:10px) and (max-width:1000px) {
     .lofo1 {
         display: none;
     }
 }
-@media (min-width:1400px) {
+@media (min-width:1000px) {
     .lofo1 {
         display: flex;
         align-items: center;
         justify-content: end;
-        width: 50%;
+        width: 80%;
         padding-right: 100px;
         height: 100%;
-        
+        background-color: rgb(90, 7, 163);
     
     }
     .lofo1 nav ul li{
@@ -47,9 +47,14 @@
 } */
 body {
     width: 100%;
-    padding-top: 200px;
+   
     background-color: white;
-    height: 1100px;
+    padding-top: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ 
+    justify-content: center;
 }
 .hre {
 height: 100%;
@@ -109,14 +114,14 @@ a {
     align-items: end;
     justify-content: space-between;
     position: fixed;
-    background-color: white;
+    background-color: rgb(90, 7, 163);
 }
 
 .lofo {
     width: 200px;
     padding-left: 20px;
     height: 100%;
-
+    background-color: rgb(90, 7, 163);
 }
 
 
