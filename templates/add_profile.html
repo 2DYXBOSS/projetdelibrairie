@@ -1,4 +1,4 @@
-
+<!-- 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,6 +48,73 @@
         </div>
     </header>
 </body>
+</html> -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/CSS/add_profil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+    
+        <div class="dex2">
+            <div class="mp" id="vjk1">
+                <img src="{{ url_for('static', filename='IMAGES/20945446.jpg')}}"  height="80%" width="100%" alt="" >
+                <a href="/">
+                    <img src="{{ url_for('static', filename='IMAGES/home-removebg-preview.png')}}" style="filter: invert(15%) sepia(59%) saturate(7268%) hue-rotate(272deg) brightness(63%) contrast(111%);" height="20px" width="20px" alt="">
+                </a>
+            </div>
+            <div class="mp" id="vjk">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <ul style="text-align: center;">
+                        {% for message in messages %}
+                        <li style="color: red;list-style-type: none;font-size: 0.8rem;padding-bottom: 20px;">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}
+                <div class="hea2" >
+                    <strong><p style="color:  rgba(162, 117, 204, 0.555);"><span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 3rem;color: rgb(90, 7, 163);">B</span>lay Library</p></strong>
+                </div>
+                <div class="hea2">
+                    <h2 style="color: rgb(90, 7, 163);font-size: 1.3rem;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Inscrivez - vous !</h2>
+                </div>
+                <form action="/add" method="POST" class="formulaire">
+                    
+                    
+                    <label >Nom et Prenom</label>
+                    <input required type="text" name="first_name" id="">
+                    <label >Email</label>
+                    <input required type="email" name="last_name" id="">
+                    <label >Entrer un mot de passe a " 8 " caractere</label>
+                    <input  required type="password" name="age" id="">
+                    <label >Confirmer Mot de passe</label>
+                    <input  required type="password" name="conf" id="">
+                    
+                 
+                    <a href="/pre" style="font-size: 0.7rem;color: rgb(90, 7, 163);padding-top: 10px;margin-bottom: 15px;">Non ! je veux me connecter</a>
+                    
+                    <button type="submit" >S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </header>
+</body>
 </html>
 
 
@@ -56,3 +123,67 @@
 
 
 
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/CSS/connex.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="dex2">
+            <div class="mp">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <ul style="text-align: center;">
+                        {% for message in messages %}
+                        <li style="color: red;list-style-type: none;font-size: 0.8rem;padding-bottom: 20px;">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}
+                <div class="hea2">
+                    <strong><p style="color: rgba(162, 117, 204, 0.555);"><span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 3rem;color: rgb(90, 7, 163);">B</span>lay Library</p></strong>
+                </div>
+                <div class="hea2">
+                    <h2 style="color: rgb(90, 7, 163);font-size: 1.3rem;margin-bottom: 10px;">Connexion</h2>
+                </div>
+                <form action="/sprome" method="POST" class="formulaire">
+                    
+                    <label >Email</label>
+                    <input required type="email" name="last_name" id="">
+                    <label >Mot de passe</label>
+                    <input  required type="text" name="age" id="">
+                    
+                    <a href="/add_data" style="font-size: 0.5rem;color: black;padding-top: 10px;margin-bottom: 50px;">S'inscrire plutot</a>
+                    <button type="submit" >Se connecter</button>
+                </form>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
