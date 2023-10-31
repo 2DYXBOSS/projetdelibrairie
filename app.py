@@ -155,13 +155,17 @@ class Userpaniere(db.Model):
     description = db.Column(db.String(100), unique = False , nullable = False)
     prix = db.Column(db.Integer,nullable = False)
     mail = db.Column(db.String(100), unique = False , nullable = False)
+    image = db.Column(db.String(100), unique = False , nullable = False)
+    
 
    
-    def __init__(self,nom,description,prix,mail):
+    def __init__(self,nom,description,prix,mail,image):
         self.nom = nom
         self.description = description
         self.prix = prix
         self.mail = mail
+        self.image = image
+        
 
     # db.init_app(app)
     # with app.app_context() :
@@ -173,7 +177,9 @@ class Userpaniere(db.Model):
             "nom": self.nom,
             "description": self.description,
             "prix": self.prix,
-            "mail": self.mail
+            "mail": self.mail,
+            "image": self.image,
+            
         }
 # <<<<<<< HEAD
 # =======
@@ -201,9 +207,25 @@ with app.app_context() :
 
 @app.route('/Payement')
 def Payement() :
+    user = Connecter.query.all()
+    data = Userpaniere.query.all()
+    zee = Connecter.query.get(1)   
+    frr = []
+   
+    
+    for i in data : 
+        if i.mail == zee.last_name :
+            frr.append(i)
+    pri = 0
+    for i in data :
+        pri += i.prix
+    
+    az = len(frr)
+    er =[az,user,pri]
+ 
 
-    return render_template('payement.html')
-
+    return render_template('payement.html',ae = er)
+    
 
 # Ajouter au panier
 
@@ -213,13 +235,14 @@ def new():
     user = Profil.query.filter_by(last_name = zee.last_name).first()
     nom = request.form.get("nom")
     desc = request.form.get("desc")
+    image = request.form.get("image")
     prix = request.form.get("prix")
     mail = user.last_name
     user = Userpaniere.query.filter_by(nom = nom, description = desc , prix = prix, mail = mail).first()
     if user:
-        flash("Ce produit existe deja")
+        
         return redirect("/achat")
-    prix = Userpaniere(nom = nom, description = desc , prix = prix, mail = mail)
+    prix = Userpaniere(nom = nom, description = desc , prix = prix, mail = mail,image=image)
     db.session.add(prix)
     db.session.commit()
     return redirect("/achat")
@@ -230,13 +253,36 @@ def new():
 @app.route('/panieruser')
 def panieruserk():
     data = Userpaniere.query.all()
+    Panier = Panierz.query.all()
     zee = Connecter.query.get(1)
     user = Userpaniere.query.filter_by(mail = zee.last_name).first()
+    
     frr = []
-    for i in data :
+    imm = []
+    
+    for i in data : 
         if i.mail == zee.last_name :
             frr.append(i)
-    return render_template('panieruser.html',user = frr)
+    # for i in Panier : 
+    #     if i.nom == zee.first_name :
+    #         imm.append(i.image)
+    # imm = Panierz.query.filter_by(mail = frr.last_name).first()
+    # for i in Panierz :
+    #     if i.nom == frr.last_name :
+    #         imm.append(i.image)
+    # autre = [frr,imm]
+    # if autre :
+    #     print(f"{autre}") 
+    # ert = [frr,imm]
+    
+    pri = 0
+    for i in data :
+        pri += i.prix
+    az = len(frr)
+    er =[az,user,pri]
+    az = len(frr)
+    er =[az,frr,pri]
+    return render_template('panieruser.html',user = er)
     # return render_template('panieruser.html',user = [user])
 
 
@@ -284,7 +330,19 @@ def suppanier() :
 @app.route('/achat')
 def achl():
     aer = Panierz.query.all()
-    return render_template('achat.html',aer = aer)
+    data = Userpaniere.query.all()
+    zee = Connecter.query.get(1)   
+    frr = []
+
+    
+    for i in data : 
+        if i.mail == zee.last_name :
+            frr.append(i)
+   
+    
+    az = len(frr)
+    er =[az,aer]
+    return render_template('achat.html',ae = er)
 
 
 
@@ -324,7 +382,22 @@ def ecraseart(id) :
 @app.route('/useprid')
 def useprid():
     user = Connecter.query.all()
-    return render_template('useprid.html',user = user)
+    data = Userpaniere.query.all()
+    zee = Connecter.query.get(1)   
+    frr = []
+
+    
+    for i in data : 
+        if i.mail == zee.last_name :
+            frr.append(i)
+   
+    
+    az = len(frr)
+    er =[az,user]
+ 
+
+    return render_template('useprid.html',ae = er)
+
 @app.route('/home')
 def home():
     # user = Connecter.query.all()
@@ -384,7 +457,10 @@ def profile() :
             return redirect("/add_data")
         
 
+
 # Connexion utlisateur et admin
+
+
 
 @app.route('/pre')
 def pree():
@@ -590,34 +666,5 @@ def display_image(filename):
     return redirect(url_for('static', filename = 'uploads/' + filename), code=301)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__' :
-    app.run(debug=True)
+    app.run(debug=True,port=5000)
