@@ -242,30 +242,33 @@
 <body>
     <div class="fixe">
         <div class="lofo" style="padding-left: 45px;padding-top: 10px;">
-            <strong><p style="color: rgba(162, 117, 204, 0.555);"><span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 3rem;color: rgb(140, 58, 216)">B</span>lay Library</p></strong>
+            <strong><p style="color: rgba(162, 117, 204, 0.555);"><span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 3rem;color: white">B</span>lay Library</p></strong>
 
         </div>
         <div class="lofo1">
             <nav>
                 <ul>
                     <li>
-                        <a href="/home" style="color: rgb(116, 116, 116);">Acceuil</a>
+                        <a href="/home" style="color: white;">Acceuil</a>
                     </li>
                     <li>
-                        <a href="/achat" style="color: rgb(116, 116, 116);">Nos publications</a>
+                        <a href="/achat" style="color: white;">Nos publications</a>
                     </li>
                     <li>
-                        <a href="/home#apeo" style="color: rgb(116, 116, 116);">A propos de nous</a>
+                        <a href="/home#apeo" style="color: white;">A propos de nous</a>
                     </li>
                     
                     <li>
-                        <a style="padding: 15px 20px;background-color: white;color: #8c3ad8;border-radius: 10px;" href="/useprid">Compte</a>
+                        <a style="padding: 15px 20px;background-color: rgb(90, 7, 163);color: white;border-radius: 10px;" href="/useprid">Compte</a>
                         
                     </li>
+                    {% if user%}
                     <li>
-                        <a style="padding: 15px 20px;background-color: white;color: #8c3ad8;border-radius: 10px;" href="/panieruser"><img src="{{url_for('static', filename='IMAGES/charrete.png')}}" style="filter: invert(24%) sepia(50%) saturate(3691%) hue-rotate(260deg) brightness(95%) contrast(92%);" alt="" height="30px" width="30px"><span style="color:rgb(31, 255, 31);font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bolder;font-size: 2rem;">0</span></a>
-                        
+                    
+                        <a style="padding: 15px 20px;background-color: rgb(90, 7, 163);color: rgb(31, 255, 31);border-radius: 10px;" href="/panieruser"><img src="{{url_for('static', filename='IMAGES/charrete.png')}}" style="filter: invert(24%) sepia(50%) saturate(3691%) hue-rotate(260deg) brightness(95%) contrast(92%);" alt="" height="30px" width="30px"><span style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bolder;font-size: 2rem;">{{user[0]}}</span></a>
+
                     </li>
+                    {% endif %}
                 </ul>
             </nav>
 
@@ -273,12 +276,12 @@
     </div>
     
     <div class="hre">
-        <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;color: rgb(140, 58, 216);;">MON PANIER</h1>
-        {% for data in user %}
+        <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;color: rgb(140, 58, 216);padding-bottom: 50px;">MON PANIER</h1>
+        {% for data in user[1] %}
         <div class="nkqekj">
             <div class="retyu2">
-                
-                <img src="{{url_for('static', filename='sac1.jpg')}}" height="300px" width="250px" alt="">
+                <img src="{{url_for('static', filename='uploads/' + data.image)}}" height="300px" width="250px" alt="">
+
             </div>
             <div class="retyu1">
                 
@@ -290,6 +293,7 @@
                     <input style="opacity: 0;height: 0;width: 0;" type="text" name="nom" value="{{data.nom}}">
                     <input style="opacity: 0;height: 0;width: 0;"  type="text" name="description" value="{{data.description}}">
                     <input style="opacity: 0;height: 0;width: 0;"  type="text" name="description" value="{{data.mail}}">
+                    
                     <button type="submit" >SUPPRIMER DU PANIER</button>
                     <a  href="/Payement">ACHETER</a>
                 </form>
@@ -316,8 +320,11 @@
            
         </div>
         {% endfor %}
-       
+        {% if user%}
+           
+            <a href="/Payement" style="padding: 15px 25px;color: white;background-color: rgb(90, 7, 163);">{{user[2]}} FCFA TOUT ACHETER</a>
 
+        {% endif %}
     </div>
 </body>
 </html>
