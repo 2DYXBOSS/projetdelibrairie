@@ -5,19 +5,20 @@
     font-family: 'Poppins', sans-serif;
     
 }
-@media (min-width:10px) and (max-width:1400px) {
+@media (min-width:10px) and (max-width:1000px) {
     .lofo1 {
         display: none;
     }
 }
-@media (min-width:1400px) {
+@media (min-width:1000px) {
     .lofo1 {
         display: flex;
         align-items: center;
         justify-content: end;
-        width: 50%;
+        width: 80%;
         padding-right: 100px;
         height: 100%;
+        background-color: rgb(90, 7, 163);
         
     
     }
@@ -109,34 +110,44 @@ a {
     align-items: end;
     justify-content: space-between;
     position: fixed;
-    background-color: white;
+    background-color: rgb(90, 7, 163);
 }
 
 .lofo {
     width: 200px;
     padding-left: 20px;
     height: 100%;
+    background-color: rgb(90, 7, 163);
 
 }
 
+.ertqsfy {
+    width: 100%;
+    height:600px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .payem {
-    width: 400px;
+    width: 300px;
+    height: 500px;
     padding-bottom: 50px;
     background-color: white;
-    margin: 0 auto;
+
     display: flex;
-    padding-top: 50px;
+    padding-top: 20px;
     flex-direction: column;
     align-items: center;
     justify-content: start;
     text-align: start;
-    border-radius: 20px;
+    border-radius: 10px 0px 0px 10px;
     box-shadow: 0.5px 0.5px 5px 0.5px rgb(232, 223, 241);
 
 }
 .payem a:hover{
     padding: 15px 25px;
-    background-color: rgb(140, 58, 216);
+    background-color: rgb(90, 7, 163);
     border-radius: 5px;
     color: white;
 
@@ -145,15 +156,45 @@ a {
     padding: 15px 25px;
     background-color: white;
     border-radius: 5px;
-    color: rgb(140, 58, 216);
-    border: 2px solid rgb(140, 58, 216);
+    color: rgb(90, 7, 163);
+    border: 2px solid rgb(90, 7, 163);
+}
+.payem1 {
+    width: 400px;
+    height: 500px;
+    padding-bottom: 50px;
+    background-color: white;
+    
+    /* display: flex; */
+    padding-top: 10px;
+    padding-left: 50px;
+    /* flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    text-align: start; */
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 0.5px 0.5px 5px 0.5px rgb(232, 223, 241);
+
+}
+.payem1 a:hover{
+    padding: 15px 25px;
+    background-color: rgb(90, 7, 163);
+    color: white;
+    border-radius: 5px;
+
+}
+.payem1 a{
+    padding: 15px 25px;
+    background-color: white;
+    border-radius: 5px;
+    color: rgb(90, 7, 163);
+    border: 2px solid rgb(90, 7, 163);
 }
 .dfgh {
     width: 250px;
-    height: 250px;
-    /* background: url("{{ url_for('static', filename='images/cde.jpeg') }}") 50% no-repeat;
-    background-size: cover; */
-    box-shadow: 0.5px 0.5px 5px 0.5px rgb(232, 223, 241);
+    height: 300px;
+    background: url(./image/cde.jpeg) 50% no-repeat;
+    background-size: cover;
 
 
 }
@@ -161,10 +202,19 @@ a {
     width: 100%;
     padding-top: 50px; 
     padding-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: rgba(140, 58, 216, 0.603);
+    padding-left: 10px;
+    padding-right: 10px;
+    color: rgb(90, 7, 163);
     background-color: white;
    
+
+}
+
+.dfggh {
+    width: 80%;
+    height: 250px;
+    background: url(./image/3847762.jpg) 50% no-repeat;
+    background-size: cover;
+
 
 }
