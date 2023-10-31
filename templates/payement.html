@@ -13,29 +13,32 @@
 <body>
     <div class="fixe">
         <div class="lofo" style="padding-left: 45px;padding-top: 10px;">
-            <strong><p style="color: rgba(162, 117, 204, 0.555);"><span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 3rem;color: rgb(140, 58, 216)">B</span>lay Library</p></strong>
+            <strong><p style="color: rgba(162, 117, 204, 0.555);"><span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 3rem;color: white">B</span>lay Library</p></strong>
 
         </div>
         <div class="lofo1">
             <nav>
                 <ul>
                     <li>
-                        <a href="/home" style="color: rgb(116, 116, 116);">Acceuil</a>
+                        <a href="/home" style="color: white;">Acceuil</a>
                     </li>
                     <li>
-                        <a href="/achat" style="color: rgb(116, 116, 116);">Nos publications</a>
+                        <a href="/achat" style="color: white;">Nos publications</a>
                     </li>
                     <li>
-                        <a href="/home#apeo" style="color: rgb(116, 116, 116);">A propos de nous</a>
+                        <a href="/home#apeo" style="color: white;">A propos de nous</a>
                     </li>
                     
                     <li>
-                        <a style="padding: 15px 20px;background-color: white;color: #8c3ad8;border-radius: 10px;" href="/useprid">Compte</a>
+                        <a style="padding: 15px 20px;background-color: rgb(90, 7, 163);color: white;border-radius: 10px;" href="/useprid">Compte</a>
                         
                     </li>
                     <li>
-                        <a style="padding: 15px 20px;background-color: white;color: #8c3ad8;border-radius: 10px;" href="/panieruser"><img src="{{url_for('static', filename='IMAGES/charrete.png')}}" style="filter: invert(24%) sepia(50%) saturate(3691%) hue-rotate(260deg) brightness(95%) contrast(92%);" alt="" height="30px" width="30px"><span style="color:rgb(31, 255, 31);font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bolder;font-size: 2rem;">0</span></a>
-                        
+                        <a style="padding: 15px 20px;background-color: rgb(90, 7, 163);color: rgb(31, 255, 31);border-radius: 10px;" href="/panieruser"><img src="{{url_for('static', filename='IMAGES/charrete.png')}}" style="filter: invert(24%) sepia(50%) saturate(3691%) hue-rotate(260deg) brightness(95%) contrast(92%);" alt="" height="30px" width="30px">
+                            {% if ae%}
+                            <span style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bolder;font-size: 2rem;">{{ae[0]}}</span>
+                            {% endif %}
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -43,7 +46,7 @@
         </div>
     </div>
     <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: bolder;color: rgb(140, 58, 216);padding-bottom: 20px;text-align: center;" >PAYEMENT</h1>
-    <div class="payem">
+    <!-- <div class="payem">
         <div class="dfgh">
             <img src="{{url_for('static', filename='IMAGES/cde.jpeg')}}" width="100%" height="100%" alt="">
         </div>
@@ -51,7 +54,27 @@
             1 / Assurer de passer la commande en cliquant sur le bouton je veux acheter ci-dessous avant de scanner le code QR ci-dessus pour effectuer le payement de votre article , merci bien pour la comprehension.
         </div>
         <a href="" >JE VEUX ACHETER</a>
+    </div> -->
+    <div class="ertqsfy">
+        <div class="payem">
+            <div class="dfgh">
+                <img src="{{url_for('static', filename='IMAGES/cde.jpeg')}}" width="100%" height="100%" alt="">
+            </div>
+            <div class="dfgh1" style="padding-left: 50px;">
+                <!-- 1 / cli le payement de votre article , merci bien pour la comprehension. -->
+            </div>
+            <a href="" >JE VEUX ACHETER</a>
+        </div>
+        <div class="payem1">
+            <div class="dfggh">
+                <img src="{{url_for('static', filename='IMAGES/sac1.jpg')}}" width="100%" height="100%" alt="">
+            </div>
+            <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;color: rgb(90, 7, 163);">NOM</h1>
+            <p style="color: gray;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo, enim temporibus consequuntur blandi doloremque alias.</p>
+            {% if ae%}
+            <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;color: rgb(90, 7, 163);">{{ae[2]}} FCFA</h1>
+            {% endif %}
+        </div>
     </div>
-    
 </body>
 </html>
